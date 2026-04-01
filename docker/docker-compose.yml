@@ -5,7 +5,7 @@ services:
     ports:
       - "${APP_PORT}:80"
     volumes:
-      - .:/var/www/html
+      - ..:/var/www/html
     environment:
       - DB_HOST=db
       - DB_NAME=${MYSQL_DATABASE}
