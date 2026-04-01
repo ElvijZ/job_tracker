@@ -1,8 +1,8 @@
 <?php
-include_once '../db/conn/connection.php';
+include_once 'db/conn/connection.php';
 session_start();
 if(!isset($_SESSION['user_id'])) {
-    header("Location: ../public/index.php", true, 303);
+    header("Location: index.php", true, 303);
     exit();
 }
 
@@ -23,8 +23,8 @@ if(!isset($_SESSION['user_id'])) {
 <body>
     <h1>Job Tracker - List Page</h1>
     <p>This is page where you can see all of your job applications.</p>
-    <a href="/public/index.php">Back to Home</a>
-    <a href="/public/insert_jobs.php">Insert New Job</a>
+    <a href="index.php">Log Out</a>
+    <a href="insert_jobs.php">Insert New Job</a>
 
     <?php if(empty($jobs)): ?>
         <p>No jobs found yet. Add your first one.</p>

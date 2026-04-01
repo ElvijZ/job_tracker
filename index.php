@@ -1,6 +1,6 @@
 <?php
     // Include the database connection file
-    include_once '../db/conn/connection.php';
+    include_once 'db/conn/connection.php';
    
     if(isset($_POST['login-btn'])) {
         $username = $_POST['username'];
@@ -20,14 +20,14 @@
             $_SESSION['username'] = $user['username'];
 
             // Redirect to the list page after successful login
-            header("Location: ../public/list_page.php",  true ,  303);
+            header("Location: list_page.php",  true ,  303);
             exit();
             
         } else {
             echo "Invalid username or password.";
         }
     }
-
+    
     ?>
 
 <!DOCTYPE html>
@@ -49,8 +49,8 @@
     <button id="login-btn" name="login-btn">Login</button>
 
 
-    <a href="/public/register.php">Don't have an account? Register here.</a>
-    <a href="/public/update_User.php">Can't remember your details? Update here.</a>
+    <a href="register.php">Don't have an account? Register here.</a>
+    <a href="update_User.php">Can't remember your details? Update here.</a>
 
 </body>
 </html>

@@ -19,7 +19,7 @@
 
     <?php
     // Include the database connection file
-    include '../db/conn/connection.php';
+    include 'db/conn/connection.php';
     
     if(isset($_POST['register-btn'])) {
         $username = $_POST['username'];
@@ -39,9 +39,6 @@
             echo "Error: " . $stmt->errorInfo()[2];
         }
     }
-
     ?>
-
-
 </body>
 </html>

@@ -1,10 +1,10 @@
 <?php
-include_once '../db/conn/connection.php';
+include_once 'db/conn/connection.php';
 session_start();
 
 if(isset($_POST['insert-job-btn'])) {
     if(!isset($_SESSION['user_id'])) {
-        header("Location: ../public/index.php", true, 303);
+        header("Location: index.php", true, 303);
         exit();
     }
 
@@ -36,7 +36,7 @@ if(isset($_POST['insert-job-btn'])) {
     }
 }
 if(isset($_POST['back-list-btn'])) {
-    header("Location: ../public/list_page.php", true, 303);
+    header("Location: list_page.php", true, 303);
     exit();
 } 
 ?>
@@ -71,7 +71,7 @@ if(isset($_POST['back-list-btn'])) {
         <textarea id="notes" name="notes"></textarea>
         <br><br>
         <input type="submit" id="insert-job-btn" name="insert-job-btn" value="Insert Job">
-        <input type="button" id="back-list-btn" name="back-list-btn" value="Back">
+        <a href="list_page.php"><button type="button" id="back-list-btn" name="back-list-btn">Back to List</button></a>
     </form>
 </body>
 </html>
