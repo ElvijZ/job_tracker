@@ -26,13 +26,19 @@ if(isset($_POST['insert-job-btn'])) {
         $stmt->bindParam(':notes', $notes);
 
         if($stmt->execute()) {
-            echo "Job inserted successfully!";
+        $msg = "Job inserted successfully.";
+        echo "<script type = 'text/javascript'>alert('$msg');</script>";
         } else {
             echo "Error: " . $stmt->errorInfo()[2];
         }
+
+
     }
 }
-
+if(isset($_POST['back-list-btn'])) {
+    header("Location: ../public/list_page.php", true, 303);
+    exit();
+} 
 ?>
 
 
@@ -65,6 +71,7 @@ if(isset($_POST['insert-job-btn'])) {
         <textarea id="notes" name="notes"></textarea>
         <br><br>
         <input type="submit" id="insert-job-btn" name="insert-job-btn" value="Insert Job">
+        <input type="button" id="back-list-btn" name="back-list-btn" value="Back">
     </form>
 </body>
 </html>
