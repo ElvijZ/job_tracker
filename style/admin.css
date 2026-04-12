@@ -1,0 +1,227 @@
+:root {
+    --bg: #eef4fb;
+    --panel: #ffffff;
+    --line: #d0ddef;
+    --text: #14213d;
+    --muted: #54657f;
+    --ok: #177245;
+    --err: #9b1c1c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    color: var(--text);
+    background: linear-gradient(140deg, #eff5fc 0%, #e6effa 100%);
+}
+
+.admin-shell {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.admin-top {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+}
+
+.admin-top h1 { margin: 0; }
+.admin-top p { margin: 6px 0 0; color: var(--muted); }
+.actions { display: flex; gap: 10px; }
+.actions a {
+    text-decoration: none;
+    background: #0b5ed7;
+    color: #fff;
+    border-radius: 8px;
+    padding: 9px 12px;
+    font-weight: 600;
+}
+
+.flash {
+    margin-top: 12px;
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-weight: 600;
+}
+.flash-success { background: #e6faef; color: var(--ok); border: 1px solid #b7e7ca; }
+.flash-error { background: #ffe9e9; color: var(--err); border: 1px solid #f3b4b4; }
+
+.cards {
+    margin-top: 14px;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(140px, 1fr));
+    gap: 10px;
+}
+.cards article {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 12px;
+}
+.cards h3 { margin: 0; font-size: 0.95rem; color: var(--muted); }
+.cards p { margin: 6px 0 0; font-size: 1.4rem; font-weight: 700; }
+
+.panel {
+    margin-top: 14px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 12px;
+}
+.panel h2 { margin: 0 0 10px; font-size: 1.1rem; }
+
+.panel-note {
+    margin: 0 0 12px;
+    color: var(--muted);
+}
+
+.mail-settings-form {
+    display: grid;
+    gap: 12px;
+}
+
+.settings-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+    gap: 12px;
+}
+
+.settings-grid label {
+    display: grid;
+    gap: 6px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.settings-grid span {
+    font-size: 0.9rem;
+}
+
+.settings-grid input,
+.settings-grid select {
+    width: 100%;
+    border: 1px solid #c8d8ec;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font: inherit;
+    background: #f9fbfe;
+    color: var(--text);
+}
+
+.mail-settings-form button {
+    width: fit-content;
+    border: none;
+    background: #0b5ed7;
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+th, td {
+    border: 1px solid #dce6f5;
+    padding: 8px;
+    text-align: left;
+}
+th { background: #f1f7ff; }
+
+.inline-form { margin: 0; }
+.inline-form button {
+    border: none;
+    background: #0b5ed7;
+    color: #fff;
+    border-radius: 6px;
+    padding: 6px 8px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.danger-btn {
+    background: #c62828;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+}
+
+.danger-btn:hover {
+    background: #b71c1c;
+}
+
+.inline-form button[disabled] {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.confirm-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(9, 22, 44, 0.45);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.confirm-modal.show {
+    display: flex;
+}
+
+.confirm-dialog {
+    width: min(92vw, 420px);
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid #d6e2f2;
+    box-shadow: 0 18px 30px rgba(16, 31, 56, 0.28);
+}
+
+.confirm-dialog h3 {
+    margin: 0;
+}
+
+.confirm-dialog p {
+    margin: 8px 0 14px;
+    color: #46566f;
+}
+
+.confirm-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.confirm-actions button {
+    border: none;
+    border-radius: 7px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+#confirm-cancel {
+    background: #dbe5f3;
+    color: #1f314a;
+}
+
+@media (max-width: 1100px) {
+    .cards { grid-template-columns: repeat(3, minmax(140px, 1fr)); }
+}
+@media (max-width: 700px) {
+    .admin-top { flex-direction: column; align-items: flex-start; }
+    .cards { grid-template-columns: repeat(2, minmax(120px, 1fr)); }
+    .settings-grid { grid-template-columns: 1fr; }
+}

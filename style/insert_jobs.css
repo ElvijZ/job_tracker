@@ -1,0 +1,187 @@
+:root {
+    --bg-main: #f3f7fd;
+    --bg-card: #ffffff;
+    --text-main: #1a2a40;
+    --text-soft: #5a6b82;
+    --line: #d3dfef;
+    --primary: #0f62d6;
+    --primary-hover: #0b52b6;
+    --secondary: #445b78;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    color: var(--text-main);
+    background:
+        radial-gradient(circle at 15% 15%, #d8ecff, transparent 30%),
+        radial-gradient(circle at 85% 20%, #ffeacc, transparent 30%),
+        linear-gradient(145deg, #f5f9ff 0%, #edf3fb 100%);
+    min-height: 100vh;
+    overflow-y: scroll;
+}
+
+.insert-page {
+    width: min(100%, 760px);
+    margin: 0 auto;
+    padding: 28px 18px;
+    overflow-x: hidden;
+}
+
+.insert-card {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 22px;
+    box-shadow: 0 12px 28px rgba(10, 40, 80, 0.09);
+}
+
+.insert-card h1 {
+    margin: 0;
+    font-size: 1.9rem;
+}
+
+.subtitle {
+    margin: 6px 0 18px;
+    color: var(--text-soft);
+}
+
+.flash-message {
+    margin: 0 0 14px;
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-weight: 600;
+}
+
+.flash-success {
+    background: #e6faef;
+    color: #177245;
+    border: 1px solid #b7e7ca;
+}
+
+.flash-error {
+    background: #ffe9e9;
+    color: #9b1c1c;
+    border: 1px solid #f3b4b4;
+}
+
+.insert-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+}
+
+.insert-form > * {
+    min-width: 0;
+}
+
+.insert-form label {
+    margin-top: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.insert-form input[type="text"],
+.insert-form input[type="date"],
+.insert-form input[type="password"],
+.insert-form select,
+.insert-form textarea {
+    display: block;
+    width: 100%;
+    border: 1px solid #bfd0e4;
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 0.96rem;
+    color: var(--text-main);
+    background: #ffffff;
+}
+
+.insert-form input[type="text"]:focus,
+.insert-form input[type="date"]:focus,
+.insert-form input[type="password"]:focus,
+.insert-form select:focus,
+.insert-form textarea:focus {
+    outline: none;
+    border-color: #3e86e9;
+    box-shadow: 0 0 0 3px rgba(62, 134, 233, 0.18);
+}
+
+.insert-form input[type="submit"] {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.insert-form textarea {
+    resize: vertical;
+    max-width: 100%;
+}
+
+.form-actions {
+    margin-top: 12px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.btn {
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 11px 18px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    min-width: 180px;
+    transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #0f62d6 0%, #0b52b6 100%);
+    color: #fff;
+    border: 1px solid #0b52b6;
+    box-shadow: 0 8px 16px rgba(11, 82, 182, 0.22);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0e5bc5 0%, #08489f 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(11, 82, 182, 0.26);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #5a6f8d 0%, #445b78 100%);
+    color: #fff;
+    border-color: #445b78;
+    box-shadow: 0 8px 16px rgba(44, 64, 92, 0.2);
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #4f6482 0%, #394f6a 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(44, 64, 92, 0.25);
+}
+
+.btn:active {
+    transform: translateY(1px);
+    box-shadow: none;
+}
+
+@media (max-width: 640px) {
+    .insert-card {
+        padding: 18px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
