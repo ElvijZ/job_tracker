@@ -2,7 +2,7 @@ USE jobtracker;
 
 INSERT INTO users (username, email, is_admin, password_hash)
 VALUES
-  ('admin', 'zepselvijs18@gmail.com', 1, '$2y$10$9BTLr3rdrXxj4A2WJ0Xv2eo0kA0Q8s3AU4m/8lQ2LJvjJ5ndHsm8u')
+  ('admin', 'zepselvijs18@gmail.com', 1, '$2y$10$vNxwpbohXtzeqg68feBMAODjF7ZEZz9MSpf9JqASVD61pQFRT.8CC')
 ON DUPLICATE KEY UPDATE username = VALUES(username), is_admin = VALUES(is_admin);
 
 INSERT INTO users (username, email, password_hash)
